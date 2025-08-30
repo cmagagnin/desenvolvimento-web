@@ -1,0 +1,193 @@
+/* ===== Reset e base ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    linear-gradient(0deg, rgba(104,213,133,0.10) 0 78px, rgba(104,213,133,0.10) 78px),
+    #fff;
+  color: #fff;
+}
+
+/* Variáveis */
+:root{
+  --bg-dark: #161C2D;
+  --primary: #473BF0;
+  --accent: #68D585;
+  --text: #FFFFFF;
+  --text-dark: #161C2D;
+  --muted: rgba(255,255,255,.65);
+  --radius: 10px;
+  --shadow: 0 34px 33px -23px rgba(22,28,45,0.13);
+}
+
+/* Helpers */
+.wrapper{
+  max-width: 1100px;
+  padding: 0 24px;
+  margin-inline: auto;
+}
+.visually-hidden{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ===== Hero ===== */
+.hero{
+  background: var(--bg-dark);
+  padding-top: 96px;      /* espaço para o “verde claro” do topo */
+  padding-bottom: 24px;
+  position: relative;
+}
+
+/* leve textura “onda” opcional (não depende de imagem externa) */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 15% 5%, rgba(255,255,255,.06), transparent 60%);
+  pointer-events: none;
+}
+
+.hero__title{
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.hero__subtitle{
+  margin: 0 0 24px;
+  font-size: 19px;
+  line-height: 32px;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.hero__link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.hero__link:hover{ text-decoration: underline; }
+
+/* setinha verde */
+.arrow,
+.arrow::before{
+  display: inline-block;
+  width: 10px; height: 10px;
+}
+.arrow{
+  position: relative;
+}
+.arrow::before{
+  content: "";
+  border-right: 2px solid var(--accent);
+  border-top: 2px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+/* ===== Seção de categorias ===== */
+.section-categories{
+  background: var(--bg-dark);
+  padding: 24px 0 80px;
+}
+
+/* grade */
+.categories{
+  list-style: none;
+  padding: 0; margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+@media (max-width: 900px){
+  .categories{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px){
+  .categories{ grid-template-columns: 1fr; }
+}
+
+/* card base */
+.card{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px 16px;
+
+  padding: 26px 28px;
+  background: #fff;
+  border-radius: var(--radius);
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.card__title{
+  grid-column: 1 / 2;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: -.5px;
+  font-weight: 700;
+  color: #fff; /* herdado pela variação destacada; sobrescrito nos cards claros */
+}
+.card__meta{
+  grid-column: 1 / 2;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 26px;
+}
+
+/* versão clara (padrão) */
+.card--dark{ color: var(--text-dark); }
+.card:not(.is-featured) .card__meta{ color: rgba(22,28,45,.7); font-weight: 400; }
+
+/* destaque (primeiro card) */
+.is-featured{
+  background: var(--primary);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* “bolha” do botão/cta no card destacado */
+.card__cta{
+  grid-column: 2 / 3;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.2);
+  display: grid;
+  place-items: center;
+}
+.arrow-dark,
+.arrow-dark::before{
+  display: inline-block;
+  width: 15px; height: 15px;
+}
+.arrow-dark{ position: relative; }
+.arrow-dark::before{
+  content: "";
+  position: absolute; inset: 0;
+  margin: auto;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--bg-dark);
+  border-top: 2px solid var(--bg-dark);
+  transform: rotate(45deg);
+}
+
+/* acessibilidade de foco */
+.card:focus-visible,
+.hero__link:focus-visible{
+  outline: 3px solid #9be6b4;
+  outline-offset: 4px;
+}
