@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>TO-DO LIST</h1>
+  </header>
+
+  <main>
+    <form id="taskForm" autocomplete="off">
+      <label for="taskInput" class="visually-hidden">Nova tarefa</label>
+      <input id="taskInput" type="text" placeholder="Digite uma tarefa">
+      <button id="addTaskButton" type="button">Adicionar</button>
+    </form>
+
+    <section aria-labelledby="lista-tarefas-titulo">
+      <h2 id="lista-tarefas-titulo">Suas tarefas</h2>
+      <ul id="taskList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small> Clique em uma tarefa para remover. </small>
+  </footer>
+</body>
+</html>
