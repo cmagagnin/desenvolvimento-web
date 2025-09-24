@@ -1,0 +1,183 @@
+:root{
+  --bg:#0e0f16;
+  --surface:#121422;
+  --surface-2:#0f1220;
+  --ink:#e6e7eb;
+  --muted:#9aa0ac;
+  --line:#1b1e2c;
+  --pill-a:#6ee7ff;
+  --pill-b:#a855f7;
+  --ok:#16a34a;
+  --danger:#ef4444;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{height:100%}
+
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #2a2540 0, #1b1830 45%, #121222 70%, #0b0c16 100%),
+    linear-gradient(180deg, #0b0c16, #0b0c16);
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+header,main,footer{width:min(560px,100%)}
+
+header{
+  text-align:center;
+  margin-bottom:12px;
+}
+
+header h1{
+  font-size:2rem;
+  letter-spacing:.3px;
+}
+
+header p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+main{
+  background:linear-gradient(180deg, #0d1020 0%, #0c0f1d 60%, #0b0e1a 100%);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:18px;
+  border:1px solid rgba(255,255,255,.04);
+}
+
+/* Form em pill (input + botão) */
+form{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+#taskInput{
+  font-size:1rem;
+  color:var(--ink);
+  background:
+    linear-gradient(var(--surface),var(--surface)) padding-box,
+    linear-gradient(90deg,var(--pill-a),var(--pill-b)) border-box;
+  border:2px solid transparent;
+  border-radius:9999px;
+  padding:14px 16px;
+  outline:none;
+}
+
+#taskInput::placeholder{color:#aab1bf}
+
+#taskInput:focus{
+  background:
+    linear-gradient(#141832,#141832) padding-box,
+    linear-gradient(90deg,var(--pill-a),var(--pill-b)) border-box;
+  box-shadow:0 0 0 6px rgba(168,85,247,.12);
+}
+
+#addTaskButton{
+  padding:0 18px;
+  border:none;
+  border-radius:9999px;
+  font-weight:700;
+  color:#0b0c16;
+  background:
+    linear-gradient(180deg,#a7f3d0,#34d399);
+  cursor:pointer;
+}
+
+#addTaskButton:active{transform:translateY(1px)}
+
+/* Lista */
+section h2{
+  margin:6px 0 10px;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:500;
+}
+
+#taskList{
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+
+#taskList li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 12px 12px 16px;
+  background:
+    linear-gradient(var(--surface-2),var(--surface-2)) padding-box,
+    linear-gradient(90deg,var(--pill-a),var(--pill-b)) border-box;
+  border:2px solid transparent;
+  border-radius:9999px;
+  transition:transform .06s ease, background .2s ease;
+}
+
+#taskList li:active{transform:scale(.997)}
+
+.taskText{
+  flex:1;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  font-size:1rem;
+}
+
+.done{
+  text-decoration:line-through;
+  opacity:.55;
+}
+
+/* Ações à direita: lápis e lixeira com pill pequeno */
+.actions{
+  display:inline-flex;
+  gap:10px;
+}
+
+.iconBtn{
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:
+    linear-gradient(#0f1428,#0f1428) padding-box,
+    linear-gradient(90deg,var(--pill-a),var(--pill-b)) border-box;
+  border:2px solid transparent;
+  cursor:pointer;
+  transition:transform .06s ease, filter .15s ease;
+}
+
+.iconBtn:active{transform:translateY(1px)}
+
+.editBtn svg path{stroke:var(--ok)}
+.trashBtn svg{fill:var(--danger)}
+
+.editBtn:hover{filter:brightness(1.15)}
+.trashBtn:hover{filter:brightness(1.15)}
+
+footer{
+  text-align:center;
+  color:var(--muted);
+  margin-top:14px;
+  font-size:.9rem;
+}
+
+.visually-hidden{
+  position:absolute;
+  width:1px;height:1px;
+  margin:-1px;padding:0;border:0;
+  clip:rect(0 0 0 0);
+  overflow:hidden;
+}
