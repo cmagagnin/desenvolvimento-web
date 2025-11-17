@@ -23,25 +23,31 @@ export default function Footer() {
               <p className="social-title">Nossas redes sociais:</p>
 
               <a
-                href="#"
+                href="https://www.instagram.com/cesarmagagnin"
                 aria-label="Instagram"
                 className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={IG} alt="Instagram" width={24} height={24} />
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/Sgt.Magagnin"
                 aria-label="Facebook"
                 className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={FB} alt="Facebook" width={24} height={24} />
               </a>
 
               <a
-                href="#"
+                href="https://www.youtube.com/@cesarmagagnin"
                 aria-label="YouTube"
                 className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={YT} alt="YouTube" width={24} height={24} />
               </a>
