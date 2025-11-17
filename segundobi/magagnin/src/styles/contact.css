@@ -156,3 +156,16 @@
     gap: 24px;
   }
 }
+
+.contact-feedback {
+  margin-top: var(--py-base);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+.contact-feedback--success {
+  color: var(--primary-color);
+}
+.contact-feedback--error {
+  color: #b3261e;
+}

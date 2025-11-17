@@ -4,7 +4,7 @@ import Hero from '../components/Hero.tsx'
 import Solutions from '../components/Solutions.tsx'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing.tsx'
-import Contact from '../components/Contact'
+import Contact from '../components/Contact.tsx'
 import Footer from '../components/Footer.tsx'
 
 export function Home() {
