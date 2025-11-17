@@ -1,0 +1,25 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="igGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#feda75"/>
+      <stop offset="25%" stop-color="#fa7e1e"/>
+      <stop offset="50%" stop-color="#d62976"/>
+      <stop offset="75%" stop-color="#962fbf"/>
+      <stop offset="100%" stop-color="#4f5bd5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo arredondado -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#igGradient)"/>
+
+  <!-- Moldura da câmera (stroke correto do logo oficial) -->
+  <rect x="72" y="72" width="360" height="360" rx="75" ry="75"
+        fill="none" stroke="white" stroke-width="36"/>
+
+  <!-- Círculo da lente (proporção oficial e espessura correta) -->
+  <circle cx="256" cy="256" r="82" fill="none" stroke="white" stroke-width="36"/>
+
+  <!-- Pontinho superior direito (tamanho oficial) -->
+  <circle cx="360" cy="135" r="26" fill="white"/>
+</svg>
+

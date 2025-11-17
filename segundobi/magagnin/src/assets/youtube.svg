@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo (retângulo vermelho com cantos arredondados, estilo YouTube) -->
+  <rect x="32" y="128" width="448" height="256" rx="72" ry="72" fill="#FF0000"/>
+
+  <!-- Triângulo de play branco -->
+  <polygon
+    fill="#FFFFFF"
+    points="
+      230,196
+      230,316
+      330,256
+    "
+  />
+</svg>
+

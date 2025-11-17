@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo azul com cantos arredondados -->
+  <rect width="512" height="512" rx="112" ry="112" fill="#1877F2"/>
+
+  <!-- Letra "f" estilizada -->
+  <path
+    fill="#FFFFFF"
+    d="
+      M 296 128
+      H 264
+      C 232 128 208 152 208 184
+      V 224
+      H 184
+      V 272
+      H 208
+      V 384
+      H 256
+      V 272
+      H 288
+      L 296 224
+      H 256
+      V 186
+      C 256 176 263 168 274 168
+      H 296
+      Z
+    "
+  />
+</svg>
+

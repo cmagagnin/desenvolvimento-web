@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #000000;
+  --second-text-color: #CCCCCC;
+  --light-text-color: #FFFFFF;
+  --light-gray: #FFFFFF;
+  --primary-color: #899A44;
+  --secondary-color: #B3BC8F;
+
+  --ff-sans: "Montserrat", system-ui, sans-serif;
+  --fw-base: 400;
+  --fw-md: 500;
+  --fw-bold: 800;
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+
+  --py-sm: 0.875rem;
+  --py-base: 1rem;
+  --py-lg: 1.5rem;
+  --py-xl: 3rem;
+  --px-lg: 1.5rem;
+}
+
+html {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-base);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--text-color);
+  overflow-x: hidden;
+
+  /* basicamente para o scroll ficar mais suave tipo ancora */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+
+  /* basicamente para evitar o scroll horizontal */
+  overflow-x: hidden;
+}
+
+
+/* so lembrando que h1, h2, h3 sao seletores de elementos, ou seja, todos os elementos do tipo h1, h2 e h3 vao receber esse estilo */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--text-color);
+  font-weight: var(--fw-bold);
+
+  /* deixa  as letras mais juntas */
+  letter-spacing: -0.04em;
+}
+
+
+/* basicmante para os titulos ficarem maiores que o texto normal, e também a variavel de tamanho de fonte pode ser alterada no :root 
+ou seja --fs-2x1 é igual a 2.25rem, que é o tamanho da fonte do h1 que equivale a 36px */
+
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-text-color);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+@media (width >=1280px) {
+  :root {
+    --fs-lg: 2rem;
+    --fs-xl: 2.625rem;
+    --fs-2xl: 4rem;
+
+    --py-sm: 1rem;
+    --py-base: 1.5rem;
+    --py-lg: 2.5rem;
+    --py-xl: 5rem;
+    --pg-lg: 2rem;
+  }
+}
